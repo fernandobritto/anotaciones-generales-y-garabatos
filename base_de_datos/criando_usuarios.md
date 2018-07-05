@@ -18,7 +18,7 @@
 
 
 
-# Privilégios aos usuários com a declaração GRANT
+## Privilégios aos usuários com a declaração GRANT
 
 #### Este usuário terá todos os privilégios, também poderá conceder privilégios a outros usuários.
 > GRANT ALL ON *.* TO superuser@'%' WITH GRANT OPTION;
@@ -36,14 +36,14 @@
 > GRANT ALL ON  banco.tabela TO usuario 
 
 
-#### Usuário com restrições 
-~~~SQL
+### Usuário com restrições 
+
 > CREATE USER assistente IDENTIFIED BY 'senha123';
 >
 > GRANT SELECT, UPDATE, DELETE ON banco.* TO assistente;
 >
 > SHOW GRANTS FOR assistente;
-~~~
+
 
 
 
