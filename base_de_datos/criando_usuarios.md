@@ -13,3 +13,24 @@
 
 ### Ver os privilégios dos usuários
 > SHOW GRANTS FOR usuario;
+
+
+
+# Privilégios aos usuários com a declaração GRANT
+
+#### Este usuário terá todos os privilégios, também poderá conceder privilégios a outros usuários.
+> GRANT ALL ON *.* TO superuser@'%' WITH GRANT OPTION;
+
+#### Usuário com todas as permissões e todos as bases.
+> GRANT ALL ON *.* TO superuser@'%' WITH GRANT OPTION;
+
+### Usuário com todas as permissões e acesso a apenas uma base de dados.
+> GRANT ALL ON  banco.* TO usuario 
+
+### Usuário com todas as permissões e acesso apenas uma base de dados e uma tabela.
+> GRANT ALL ON  banco.tabela TO usuario 
+
+### Usuário com restrições 
+> CREATE USER assistente IDENTIFIED BY 'senha123';
+> GRANT SELECT, UPDATE, DELETE ON banco.* TO assistente;
+> SHOW GRANTS FOR assistente;
