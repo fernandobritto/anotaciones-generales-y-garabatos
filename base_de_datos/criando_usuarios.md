@@ -32,5 +32,13 @@
 
 ### Usuário com restrições 
 > CREATE USER assistente IDENTIFIED BY 'senha123';
+>
 > GRANT SELECT, UPDATE, DELETE ON banco.* TO assistente;
+>
 > SHOW GRANTS FOR assistente;
+
+
+
+
+# Remover os privilégios dos usuários com a declaração REVOKE
+` REVOKE ALL PRIVILEGES, GRANT OPTION FROM usuario; `
