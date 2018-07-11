@@ -56,3 +56,5 @@
 
 ## Alterando a senha de usuários MySQL
 > SET password FOR 'dbadmin'@'localhost' = '#NovaSenha123';
+>
+> ALTER USER 'dbadmin'@'localhost' = '#NovaSenha123';
