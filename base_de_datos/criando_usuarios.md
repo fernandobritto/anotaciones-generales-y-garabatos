@@ -50,3 +50,9 @@
 
 ## Remover os privilégios dos usuários com a declaração REVOKE
 > REVOKE ALL PRIVILEGES, GRANT OPTION FROM usuario; 
+
+
+
+
+## Alterando a senha de usuários MySQL
+> SET password FOR 'dbadmin'@'localhost' = '#NovaSenha123';
