@@ -6,4 +6,6 @@ php -r "readfile('https://getcomposer.org/installer');" | php
 **composer update**
 
 
+> composer init
+
 > php composer.phar install
