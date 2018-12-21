@@ -1,5 +1,5 @@
 # anotaciones-generales-y-garabatos
 
-> anotaciones
+> anotaciones generales y garabatos
 
 
