@@ -10,10 +10,9 @@ $app->get('/', function() {
     
 	$sql = new Coder\DB\Sql();
 
-	$results = $sql->select("SELECT * FROM td_users");
+	$results = $sql->select("SELECT * FROM tb_users");
 
 	echo json_encode($results);
-
 
 });
 
