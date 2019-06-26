@@ -1,5 +1,5 @@
 {
-    "name": "fernandobritto/E-commerce",
+    "name": "fernandobritto/e-commerce",
     "authors": [
         {
             "name": "Fernando Britto",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\codebr\\php-classes\\src"
+            "Coder\\": "vendor\\coder\\php-classes\\src"
         }
     }
 }
