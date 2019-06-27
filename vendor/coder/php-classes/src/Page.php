@@ -1,5 +1,6 @@
 <?php 
 
+
 namespace Coder;
 
 use Rain\Tpl;
@@ -30,16 +31,16 @@ class Page {
 
 		$this->tpl = new Tpl();
 
-		if ($this->options['data']) $this->setData($this->options['data']);
+		$this->setData($this->options['data']);
 
-		if ($this->options['header'] === true) $this->tpl->draw("header", false);
+		$this->tpl->draw("header");
 
 	}
 
 	public function __destruct()
 	{
 
-		if ($this->options['footer'] === true) $this->tpl->draw("footer", false);
+		$this->tpl->draw("footer");
 
 	}
 
@@ -55,16 +56,15 @@ class Page {
 
 	}
 
-	public function setTpl($tplname, $data = array(), $returnHTML = false)
+	public function setTpl($name, $data = array(), $returnHTML = false)
 	{
 
 		$this->setData($data);
 
-		return $this->tpl->draw($tplname, $returnHTML);
+		return $this->tpl->draw($name, $returnHTML);
 
 	}
 
 }
 
  ?>
- 
