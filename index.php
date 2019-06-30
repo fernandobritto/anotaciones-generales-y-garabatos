@@ -4,6 +4,7 @@ require_once("vendor/autoload.php");
 
 use \Slim\Slim;
 use \Coder\Page;
+use \Coder\PageAdmin;
 
 $app = new Slim();
 
@@ -20,7 +21,7 @@ $app->get('/', function() {
 
 $app->get('/admin', function() {
     
-	$page = new Page();
+	$page = new PageAdmin();
 
 	$page->setTpl("index");
 
