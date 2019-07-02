@@ -38,6 +38,14 @@ $app->get('/admin/login', function() {
 
 });
 
+$app->post('/admin/login', function() {
+    
+	
+	$page = new PageAdmin();
+	$page->setTpl("login");
+
+});
+
 $app->run();
 
  ?>
