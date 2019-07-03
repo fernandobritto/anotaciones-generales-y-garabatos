@@ -5,6 +5,7 @@ require_once("vendor/autoload.php");
 use \Slim\Slim;
 use \Coder\Page;
 use \Coder\PageAdmin;
+use \Coder\Model\User;
 
 $app = new Slim();
 
@@ -40,9 +41,12 @@ $app->get('/admin/login', function() {
 
 $app->post('/admin/login', function() {
     
+	User::login($_POST["login"], $_POST["password"]);
+
+	header("Location: /admin");
+
+	exit;
 	
-	$page = new PageAdmin();
-	$page->setTpl("login");
 
 });
 
