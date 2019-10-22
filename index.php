@@ -8,13 +8,11 @@ $app->config('debug', true);
 
 $app->get('/', function() {
     
-	$sql = new Code\DB\Sql();
-	$results = $sql->select("SELECT * FROM tb_users");
+	$page = new Code\Page();
 
-	echo json_encode($results);
+	$page->setTpl("index");
 
 });
 
 $app->run();
 
- ?>
