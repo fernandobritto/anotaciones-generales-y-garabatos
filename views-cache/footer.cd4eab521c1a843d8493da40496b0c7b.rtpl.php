@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2017 Hcode Treinamentos. <a href="http://www.hcode.com.br" target="_blank">hcode.com.br</a></p>
+                        <p>&copy; 2020 Fernando Britto. <a href="http://www.fernandobritto.com.br" target="_blank">fernandobritto.com.br</a></p>
                     </div>
                 </div>
                 

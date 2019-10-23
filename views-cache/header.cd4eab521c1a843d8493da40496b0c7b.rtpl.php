@@ -1,10 +1,13 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
 <!--
-    Ecommerce by hcode.com.br
+    Ecommerce by Fernando Britto
 -->
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
+     <meta charset="UTF-8">
+    <meta name="description" content="Ecommerce Project">
+    <meta name="keywords" content="HTML,CSS,JavaScript,PHP,MySQL">
+    <meta name="author" content="Fernando Britto">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ecommerce</title>
@@ -79,7 +82,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="#"><img src="img/logo.png"></a></h1>
+                        <h1><a href="#"><img src="../assets/site/img/logo.png"></a></h1>
                     </div>
                 </div>
                 
