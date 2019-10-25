@@ -22,5 +22,16 @@ $app->get('/admin', function() {
 
 });
 
+$app->get('/admin/login', function() {
+    
+	$page = new Code\PageAdmin([
+		"header"=>false,
+		"footer"=>false
+	]);
+
+	$page->setTpl("login");
+
+});
+
 $app->run();
 
