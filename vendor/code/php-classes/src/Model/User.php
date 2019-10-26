@@ -23,7 +23,7 @@ class User extends Model {
 		));
 
 		if (count($results) === 0) {
-			throw new \Exception("Não foi possível fazer login.");
+			throw new \Exception("Usuário inexistente ou senha inválida.");
 		}
 
 		$data = $results[0];
@@ -74,4 +74,3 @@ class User extends Model {
 
 }
 
- ?>
