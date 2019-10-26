@@ -1,6 +1,8 @@
 <?php 
+session_start();
 
 require_once("vendor/autoload.php");
+// require_once("functions.php");
 
 use Code\Model\User;
 
@@ -37,9 +39,17 @@ $app->get('/admin/login', function() {
 
 $app->post('/admin/login', function(){
 
-	User::login($_POST["login"], $_POST["password"]);
+	User::login($_POST['deslogin'], $_POST['despassword']);
 
 	header("Location: /admin");
+	exit;
+});
+
+$app->get('/admin/logout', function() {
+
+	User::logout();
+
+	header("Location: /admin/login");
 	exit;
 
 });
