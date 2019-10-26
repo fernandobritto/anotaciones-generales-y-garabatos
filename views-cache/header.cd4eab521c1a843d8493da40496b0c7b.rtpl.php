@@ -4,7 +4,7 @@
 -->
 <html lang="pt-br">
   <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="description" content="Ecommerce Project">
     <meta name="keywords" content="HTML,CSS,JavaScript,PHP,MySQL">
     <meta name="author" content="Fernando Britto">
