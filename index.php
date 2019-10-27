@@ -54,6 +54,14 @@ $app->get('/admin/logout', function() {
 
 });
 
+$app->get('/admin/users', function() {
+
+	$page = new Code\PageAdmin();
+
+	$page->setTpl("users");
+
+});
+
 
 
 $app->run();
