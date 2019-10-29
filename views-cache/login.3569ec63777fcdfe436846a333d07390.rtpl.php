@@ -1,11 +1,14 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
-<html>
+<!--
+    Ecommerce by Fernando Britto
+-->
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Fernando Britto">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-commerce | Log in</title>
+  <title>E-commerce | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -29,7 +32,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../assets/admin/index2.html"><b>Admin</b>LTE</a>
+    <a href="../assets/admin/index2.html"><b>E-</b>commerce</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
