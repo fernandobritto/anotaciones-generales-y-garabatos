@@ -63,10 +63,13 @@ $app->get('/admin/logout', function() {
 $app->get('/admin/users', function() {
 
 	User::verifyLogin();
+	$users = User::listAll();
 
 	$page = new PageAdmin();
 
-	$page->setTpl("users");
+	$page->setTpl("users", array(
+		"users"=>$users
+	));
 
 });
 
