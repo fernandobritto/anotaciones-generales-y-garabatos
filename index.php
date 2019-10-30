@@ -2,8 +2,10 @@
 session_start();
 
 require_once("vendor/autoload.php");
-// require_once("functions.php");
 
+
+use Code\Page;
+use Code\PageAdmin;
 use Code\Model\User;
 
 $app = new \Slim\Slim();
@@ -12,17 +14,18 @@ $app->config('debug', true);
 
 $app->get('/', function() {
     
-	$page = new Code\Page();
+	$page = new Page();
 
 	$page->setTpl("index");
 
 });
 
+// Controle de acesso para o Administrador
 $app->get('/admin', function() {
 
 	User::verifyLogin();
     
-	$page = new Code\PageAdmin();
+	$page = new PageAdmin();
 
 	$page->setTpl("index");
 
@@ -30,7 +33,7 @@ $app->get('/admin', function() {
 
 $app->get('/admin/login', function() {
     
-	$page = new Code\PageAdmin([
+	$page = new PageAdmin([
 		"header"=>false,
 		"footer"=>false
 	]);
@@ -61,7 +64,7 @@ $app->get('/admin/users', function() {
 
 	User::verifyLogin();
 
-	$page = new Code\PageAdmin();
+	$page = new PageAdmin();
 
 	$page->setTpl("users");
 
@@ -71,7 +74,7 @@ $app->get('/admin/users/create', function() {
 
 	User::verifyLogin();
 
-	$page = new Code\PageAdmin();
+	$page = new PageAdmin();
 
 	$page->setTpl("users-create");
 
@@ -81,7 +84,7 @@ $app->get('/admin/users:iduser', function($iduser) {
 
 	User::verifyLogin();
 
-	$page = new Code\PageAdmin();
+	$page = new PageAdmin();
 
 	$page->setTpl("users-update");
 
@@ -89,12 +92,10 @@ $app->get('/admin/users:iduser', function($iduser) {
 
 
 $app->post("/admin/users/create", function(){
-
 	User::verifyLogin();	
 });
 
 $app->post("/admin/users:iduser", function($iduser){
-
 	User::verifyLogin();	
 });
 
