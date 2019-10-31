@@ -1,9 +1,9 @@
 {
-    "name": "fernandobritto/ecommerce",
+    "name": "fernandobritto/infoenter",
     "authors": [
         {
             "name": "Fernando Britto",
-            "email": "suporte@fernandobritto.com.br"
+            "email": "suporte@infoenter.com.br"
         }
     ],
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Code\\": "vendor\\code\\php-classes\\src"
+            "Store\\": "vendor\\code\\php-classes\\src"
         }
     }
 }
