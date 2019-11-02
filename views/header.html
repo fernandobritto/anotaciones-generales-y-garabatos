@@ -4,7 +4,10 @@
 -->
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="description" content="Info Enter">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Fernando Britto">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>InfoEnter Store</title>
