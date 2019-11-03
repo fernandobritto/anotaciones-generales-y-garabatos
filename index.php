@@ -52,6 +52,7 @@ $app->post('/admin/login', function() {
 
 });
 
+// Rota para efetuar o logout
 $app->get('/admin/logout', function() {
 
 	User::logout();
