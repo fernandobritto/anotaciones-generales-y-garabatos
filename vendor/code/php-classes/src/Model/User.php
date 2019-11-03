@@ -45,6 +45,7 @@ class User extends Model {
 
 	}
 
+	// Medodo statico para efetuar logout
 	public static function logout()
 	{
 
