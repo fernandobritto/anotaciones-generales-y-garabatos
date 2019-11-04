@@ -23,7 +23,6 @@ $app->get('/admin', function(){
 	// Chamada do metodo statico que verifica o login
 	User::verifyLogin();
 
-
 	$page = new \Store\PageAdmin();
 	$page->setTpl("index");
 });
@@ -61,6 +60,40 @@ $app->get('/admin/logout', function() {
 	exit;
 
 });
+
+// Rota da lista de usuarios
+$app->get("/admin/users", function(){
+	User::verifyLogin();
+	$page = new \Store\PageAdmin();
+	$page->setTpl("users");
+});
+
+$app->get("/admin/users/create", function(){
+	User::verifyLogin();
+	$page = new \Store\PageAdmin();
+	$page->setTpl("users-create");
+});
+
+$app->get("/admin/users/:id_user", function($iduser){
+	User::verifyLogin();
+	$page = new \Store\PageAdmin();
+	$page->setTpl("users-update");
+});
+
+$app->post("/admin/users/create", function(){
+	User::verifyLogin();
+});
+
+
+$app->post("/admin/users/:id_user", function($iduser){
+	User::verifyLogin();
+});
+
+$app->delete("/admin/users/:id_user", function($iduser){
+	User::verifyLogin();
+});
+
+
 
 
 $app->run();
