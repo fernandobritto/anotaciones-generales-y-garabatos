@@ -3,8 +3,8 @@ session_start();
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
-use \Store\Page;
-use \Store\Model\User;
+// nova chamada dos namespaces do PHP7
+use \Store\{Page, PageAdmin, Model\User};
 
 
 $app = new Slim();
@@ -23,7 +23,7 @@ $app->get('/admin', function(){
 	// Chamada do metodo statico que verifica o login
 	User::verifyLogin();
 
-	$page = new \Store\PageAdmin();
+	$page = new PageAdmin();
 	$page->setTpl("index");
 });
 
@@ -32,7 +32,7 @@ $app->get('/admin', function(){
 // Login 
 $app->get('/admin/login', function() {
     
-	$page = new \Store\PageAdmin([
+	$page = new PageAdmin([
 		"header"=>false,
 		"footer"=>false
 	]);
@@ -64,19 +64,19 @@ $app->get('/admin/logout', function() {
 // Rota da lista de usuarios
 $app->get("/admin/users", function(){
 	User::verifyLogin();
-	$page = new \Store\PageAdmin();
+	$page = new PageAdmin();
 	$page->setTpl("users");
 });
 
 $app->get("/admin/users/create", function(){
 	User::verifyLogin();
-	$page = new \Store\PageAdmin();
+	$page = new PageAdmin();
 	$page->setTpl("users-create");
 });
 
 $app->get("/admin/users/:id_user", function($iduser){
 	User::verifyLogin();
-	$page = new \Store\PageAdmin();
+	$page = new PageAdmin();
 	$page->setTpl("users-update");
 });
 
