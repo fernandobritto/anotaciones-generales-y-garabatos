@@ -65,8 +65,9 @@ $app->get('/admin/logout', function() {
 // Rota da lista de usuarios
 $app->get("/admin/users", function(){
 	User::verifyLogin();
+	$users = User::listAll();	
 	$page = new PageAdmin();
-	$page->setTpl("users");
+	$page->setTpl("users", array("users"=>$users));
 });
 
 
@@ -77,6 +78,11 @@ $app->get("/admin/users/create", function(){
 });
 
 
+$app->get("/admin/users/:id_user/delete", function($iduser){
+	User::verifyLogin();
+});
+
+
 $app->get("/admin/users/:id_user", function($iduser){
 	User::verifyLogin();
 	$page = new PageAdmin();
@@ -84,19 +90,6 @@ $app->get("/admin/users/:id_user", function($iduser){
 });
 
 
-$app->post("/admin/users/create", function(){
-	User::verifyLogin();
-});
-
-
-$app->post("/admin/users/:id_user", function($iduser){
-	User::verifyLogin();
-});
-
-
-$app->delete("/admin/users/:id_user", function($iduser){
-	User::verifyLogin();
-});
 
 
 
