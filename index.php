@@ -1,9 +1,9 @@
 <?php 
-
+session_start();
 require_once("vendor/autoload.php");
 
 
-use \Store\{Page, PageAdmin};
+use \Store\{Page, PageAdmin, Model\User};
 
 $app = new \Slim\Slim();
 
@@ -39,7 +39,8 @@ $app->get('/admin/login', function() {
 
 $app->post('/admin/login', function() {
 
-	User::login(post('login'), post('password'));
+	User::login($_POST['login'], $_POST['password']);
+	//User::login(post('login'), post('password'));
 	header("Location: /admin");
 	exit;
 
@@ -48,7 +49,6 @@ $app->post('/admin/login', function() {
 $app->get('/admin/logout', function() {
 
 	User::logout();
-
 	header("Location: /admin/login");
 	exit;
 
