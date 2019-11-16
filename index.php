@@ -3,7 +3,8 @@ session_start();
 require_once("vendor/autoload.php");
 
 
-use \Store\{Page, PageAdmin, Model\User};
+use \Store\{Page, PageAdmin};
+use \Store\Model\User;
 
 $app = new \Slim\Slim();
 
@@ -71,7 +72,12 @@ $app->get('/admin/users/create', function() {
 
 
 $app->get('/admin/users/:iduser/delete', function($iduser) {
-	User::verifyLogin();	
+	User::verifyLogin();
+	$user = new User();
+	$user->get((int)$iduser);
+	$user->delete();
+	header("Location: /admin/users");
+	exit;	
 });
 
 
@@ -115,13 +121,45 @@ $app->post("/admin/users/create", function () {
 
 // Salvar a edição dos usuarios
 $app->post('/admin/users/:iduser', function($iduser) {
-	User::verifyLogin();	
+	User::verifyLogin();
+	$user = new User();
+	$_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
+	$user->get((int)$iduser);
+	$user->setData($_POST);
+	$user->update();	
+	header("Location: /admin/users");
+	exit;
+});
+
+// Recuperação de senha
+$app->get("/admin/forgot", function(){
+	
+	$page = new PageAdmin([
+		"header"=>false,
+		"footer"=>false
+	]);
+
+	$page->setTpl("forgot");
+
+
+});
+
+$app->post("/admin/forgot", function(){
+	$user = User::getForgot($_POST["email"]);
+	header("Location: /admin/forgot/sent");
+	exit;
 });
 
 
 
 
-
+// $app->get("/admin/forgot/sent", function(){
+// 	$page = new PageAdmin([
+// 		"header"=>false,
+// 		"footer"=>false
+// 	]);
+// 	$page->setTpl("forgot-sent");	
+// });
 
 
 
