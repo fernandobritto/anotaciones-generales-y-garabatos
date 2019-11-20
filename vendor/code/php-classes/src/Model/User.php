@@ -8,10 +8,12 @@ use \Store\DB\Sql;
 class User extends Model {
 
 	const SESSION = "User";
+	const SECRET = "Info_Enter_PHP_7";
 
-	protected $fields = [
-		"iduser", "idperson", "deslogin", "despassword", "inadmin", "dtergister"
-	];
+
+	// protected $fields = [
+	// 	"iduser", "idperson", "deslogin", "despassword", "inadmin", "dtergister"
+	// ];
 
 	public static function login($login, $password):User
 	{
