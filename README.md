@@ -1,2 +1,1 @@
-# Terraform Auto Scaling - AWS 
-
+# Terraform Auto Scaling - AWS
