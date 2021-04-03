@@ -1,2 +1,2 @@
-# E-commerce Project 
+# Terraform Auto Scaling - AWS 
 
